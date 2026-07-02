@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>准高三暑假学习规划｜思维导图</title>
+  <style>
+    :root{
+      --bg:#050606;
+      --panel:#0B1111;
+      --panel-2:#101918;
+      --mint:#D5F3EE;
+      --mint-2:#AEE3DC;
+      --teal:#1F737A;
+      --teal-2:#52A7A9;
+      --pink:#E67E96;
+      --pink-2:#FADEE4;
+      --blue:#526CB2;
+      --blue-2:#EDF2FE;
+      --line:rgba(213,243,238,.18);
+      --muted:rgba(213,243,238,.68);
+      --shadow:0 22px 70px rgba(0,0,0,.45);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;background:var(--bg);color:var(--mint);font-family:"PingFang SC","Noto Sans SC","Microsoft YaHei",system-ui,sans-serif;}
+    body{
+      background:
+        radial-gradient(circle at 88% 12%, rgba(31,115,122,.32), transparent 30%),
+        radial-gradient(circle at 10% 86%, rgba(230,126,150,.12), transparent 28%),
+        linear-gradient(rgba(213,243,238,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(213,243,238,.035) 1px, transparent 1px),
+        #050606;
+      background-size:auto,auto,44px 44px,44px 44px,auto;
+    }
+    a{color:inherit}
+    .page{max-width:1680px;margin:0 auto;padding:52px 42px 80px;}
+    .hero{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:start;margin-bottom:34px;}
+    .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:17px;font-weight:900;letter-spacing:4px;color:var(--mint-2);}
+    .eyebrow:before{content:"";width:44px;height:5px;border-radius:99px;background:var(--pink);}
+    h1{margin:22px 0 0;font-size:76px;line-height:1.03;letter-spacing:-4px;font-weight:950;}
+    h1 span{color:var(--pink)}
+    .lead{margin-top:22px;max-width:980px;color:var(--mint-2);font-size:25px;line-height:1.7;font-weight:620;}
+    .hero-card{width:330px;border:1px solid var(--line);border-radius:30px;background:rgba(11,17,17,.78);box-shadow:var(--shadow);padding:28px;}
+    .hero-card b{display:block;color:var(--pink);font-size:58px;line-height:1;font-weight:950;letter-spacing:-2px;}
+    .hero-card p{margin:16px 0 0;color:var(--mint-2);font-size:19px;line-height:1.55;}
+    .toolbar{position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 -8px 34px;padding:16px 8px;background:linear-gradient(to bottom, rgba(5,6,6,.96), rgba(5,6,6,.74));backdrop-filter:blur(10px);}
+    button{border:1px solid rgba(213,243,238,.25);border-radius:999px;background:rgba(213,243,238,.06);color:var(--mint);padding:11px 17px;font-size:15px;font-weight:800;cursor:pointer;transition:.25s ease;}
+    button:hover{border-color:var(--pink);transform:translateY(-1px);}
+    .hint{margin-left:auto;color:var(--muted);font-size:14px;}
+
+    .map-shell{overflow:auto;border:1px solid var(--line);border-radius:34px;background:rgba(5,6,6,.58);box-shadow:var(--shadow);padding:34px;}
+    .mindmap{min-width:1420px;transform-origin:top left;transition:transform .28s ease;}
+    .core{position:relative;margin:0 auto 42px;width:720px;padding:30px 34px;border:3px solid var(--mint);border-radius:34px;text-align:center;background:linear-gradient(145deg, rgba(31,115,122,.38), rgba(5,6,6,.92));box-shadow:0 0 0 10px rgba(213,243,238,.035),0 20px 58px rgba(0,0,0,.42);}
+    .core:after{content:"";position:absolute;left:50%;bottom:-44px;width:3px;height:44px;background:var(--line);}
+    .core h2{margin:0;font-size:46px;line-height:1.12;letter-spacing:-2px;}
+    .core p{margin:14px auto 0;max-width:620px;color:var(--mint-2);font-size:20px;line-height:1.6;}
+
+    .branches{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;align-items:stretch;}
+    .branches:before{content:"";position:absolute;left:7.5%;right:7.5%;top:-24px;height:3px;background:var(--line);}
+    .branch{position:relative;border:1px solid var(--line);border-radius:28px;background:rgba(11,17,17,.86);padding:24px 22px 22px;box-shadow:0 16px 40px rgba(0,0,0,.24);}
+    .branch:before{content:"";position:absolute;top:-24px;left:50%;width:3px;height:24px;background:var(--line);}
+    .branch:hover{border-color:rgba(213,243,238,.34);}
+    .branch-title{display:flex;align-items:flex-start;gap:13px;margin-bottom:18px;}
+    .num{display:grid;place-items:center;flex:0 0 auto;width:46px;height:46px;border-radius:15px;color:#050606;background:var(--mint);font-size:20px;font-weight:950;}
+    .branch:nth-child(2n) .num{background:var(--pink);}
+    .branch:nth-child(3n) .num{background:var(--blue-2);}
+    .branch h3{margin:0;font-size:30px;line-height:1.18;letter-spacing:-1px;}
+    .summary{margin:0 0 16px;color:var(--mint-2);font-size:17px;line-height:1.55;}
+
+    details{border:1px solid rgba(213,243,238,.14);border-radius:18px;background:rgba(213,243,238,.035);margin:10px 0;overflow:hidden;}
+    summary{list-style:none;cursor:pointer;display:flex;gap:10px;align-items:center;padding:14px 15px;color:var(--mint);font-size:18px;font-weight:900;line-height:1.35;}
+    summary::-webkit-details-marker{display:none}
+    summary:before{content:"+";display:grid;place-items:center;width:22px;height:22px;border-radius:50%;color:#050606;background:var(--pink);font-size:16px;font-weight:950;flex:0 0 auto;}
+    details[open] summary:before{content:"–";background:var(--mint);}
+    .detail{padding:0 15px 16px 47px;color:var(--mint-2);font-size:16px;line-height:1.55;}
+    .detail ul{margin:0;padding-left:18px;}
+    .detail li{margin:7px 0;}
+    .tagline{display:inline-block;margin-top:10px;padding:7px 11px;border-radius:999px;border:1px solid rgba(230,126,150,.48);color:var(--pink-2);font-size:14px;font-weight:900;}
+
+    .principles{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:42px 0 28px;}
+    .principle{border-left:7px solid var(--pink);border-radius:20px;background:rgba(230,126,150,.08);padding:22px 24px;}
+    .principle:nth-child(2){border-left-color:var(--teal);background:rgba(31,115,122,.16);}
+    .principle h4{margin:0 0 10px;font-size:26px;}
+    .principle p{margin:0;color:var(--mint-2);font-size:18px;line-height:1.6;}
+
+    .action-board{margin-top:36px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;}
+    .action{min-height:180px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(145deg, rgba(31,115,122,.2), rgba(11,17,17,.88));padding:24px;}
+    .action b{color:var(--pink);font-size:19px;letter-spacing:2px;}
+    .action h4{margin:12px 0 12px;font-size:28px;}
+    .action p{margin:0;color:var(--mint-2);font-size:17px;line-height:1.62;}
+
+    .footer{margin-top:34px;padding:30px;border:1px solid var(--line);border-radius:30px;background:rgba(11,17,17,.72);}
+    .footer h3{margin:0;font-size:34px;}
+    .footer p{margin:14px 0 0;color:var(--mint-2);font-size:20px;line-height:1.7;}
+
+    @media(max-width:900px){
+      .page{padding:34px 18px 60px;}
+      .hero{grid-template-columns:1fr;}
+      h1{font-size:46px;letter-spacing:-2px;}
+      .lead{font-size:19px;}
+      .hero-card{width:100%;}
+      .hint{margin-left:0;width:100%;}
+      .map-shell{padding:18px;border-radius:24px;}
+      .mindmap{min-width:1120px;}
+      .branches{grid-template-columns:repeat(4,260px);gap:18px;}
+      .core{width:560px;}
+      .principles,.action-board{grid-template-columns:1fr;}
+    }
+    @media print{
+      body{background:#fff;color:#111;}
+      .toolbar{display:none;}
+      .page{max-width:none;padding:20px;}
+      .map-shell{overflow:visible;box-shadow:none;border:none;padding:0;}
+      .mindmap{min-width:0;transform:none!important;}
+      .branches{grid-template-columns:repeat(4,1fr);}
+      .branch,.core,.footer,.action,.principle{break-inside:avoid;background:#fff;color:#111;box-shadow:none;}
+      .summary,.detail,.lead,.hero-card p,.core p,.footer p,.action p,.principle p{color:#333;}
+      details{background:#fff;}
+      details:not([open]) .detail{display:block;}
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">准高三暑假学习规划 · 思维导图</div>
+        <h1>这个暑假，<br><span>别平均用力。</span></h1>
+        <p class="lead">把逐字稿整理成可发布的 HTML 思维导图：先看总原则，再按英语、数学、语文、理科、文科和执行避坑展开。适合放在课程资料、公众号、小红书/B站动态或学习社群里。</p>
+      </div>
+      <aside class="hero-card">
+        <b>6—8h</b>
+        <p>每天有效学习即可。真正的领先不是“看起来很卷”，而是清楚知道自己该补什么、练什么、放弃什么。</p>
+      </aside>
+    </section>
+
+    <nav class="toolbar">
+      <button onclick="setAll(true)">全部展开</button>
+      <button onclick="setAll(false)">全部收起</button>
+      <button onclick="zoomMap(.08)">放大</button>
+      <button onclick="zoomMap(-.08)">缩小</button>
+      <button onclick="window.print()">打印 / 导出 PDF</button>
+      <span class="hint">提示：手机端可左右滑动查看完整脑图；发布前可直接复制此 HTML。</span>
+    </nav>
+
+    <section class="principles">
+      <article class="principle">
+        <h4>优先级 1：主科优先于选科</h4>
+        <p>语数英总分 360，是本科线和一本线的底盘。选科很重要，但暑假不能让选科抢走主科基础。</p>
+      </article>
+      <article class="principle">
+        <h4>优先级 2：弱科优先于优势科</h4>
+        <p>数学和英语是最稳定的拉分项。有弱势科目时，先补数学和英语；选科同步扫基础即可。</p>
+      </article>
+    </section>
+
+    <section class="map-shell">
+      <div class="mindmap" id="mindmap">
+        <div class="core">
+          <h2>准高三暑假规划主线</h2>
+          <p>先抓主科，再抓短板；先抓基础，再抓题型；先抓能提分的事，再谈努力感。</p>
+        </div>
+
+        <div class="branches">
+          <article class="branch">
+            <div class="branch-title"><span class="num">01</span><h3>总原则：不要六科平均用力</h3></div>
+            <p class="summary">很多人时间表排得很满，但每科都浮在表面；暑假最重要的是分清优先级。</p>
+            <details open><summary>两个优先级</summary><div class="detail"><ul><li>主科优先于选科：语数英决定总分底盘。</li><li>弱科优先于优势科：数学、英语弱就优先补。</li><li>选科暑假同步扫基础，不急着死磕难题。</li></ul></div></details>
+            <details><summary>核心警告</summary><div class="detail"><ul><li>“上午语数英、下午选科、晚上整套卷”看着努力，实际容易低效。</li><li>不要努力到只感动自己，没有感动命题人。</li></ul></div></details>
+            <span class="tagline">关键词：优先级 > 时长</span>
+          </article>
+
+          <article class="branch">
+            <div class="branch-title"><span class="num">02</span><h3>英语：词汇、句子、题型</h3></div>
+            <p class="summary">英语不到 110，暑假非常值得投入。底层逻辑是：看懂、读准、选对。</p>
+            <details open><summary>词汇筛查打底</summary><div class="detail"><ul><li>完整过一遍高考 3500 词。</li><li>圈出完全陌生词，目标压到 800 个以内。</li><li>每天新学 100 个，第二天复盘前一天。</li><li>单词是所有题型的根，不能偷懒。</li></ul></div></details>
+            <details><summary>题型专项突破</summary><div class="detail"><ul><li>不急着刷整套卷，按板块逐个攻克。</li><li>阅读每天 2 篇；完形 + 七选五每天 1 组。</li><li>做完立刻复盘：写清楚“为什么选这个”。</li><li>形成稳定答题 SOP：复现、转折、情绪变化。</li></ul></div></details>
+            <details><summary>长难句 + 作文</summary><div class="detail"><ul><li>每天拆 3–5 个真题长难句。</li><li>划分句子成分，训练读准结构。</li><li>分类积累作文框架和高分表达。</li><li>每天 5 分钟练衡水体，扫描阅卷更占优势。</li><li>优先刷近五年高考真题，不被低质量模考带偏。</li></ul></div></details>
+            <span class="tagline">关键词：3500词 · SOP · 真题</span>
+          </article>
+
+          <article class="branch">
+            <div class="branch-title"><span class="num">03</span><h3>数学：先拿保命分</h3></div>
+            <p class="summary">基础弱的同学暑假不要碰太多难题，先按模块补基础题型。</p>
+            <details open><summary>适用对象</summary><div class="detail"><ul><li>高一高二平时不到 120 的同学。</li><li>目标先不是冲 130，而是把 100 分附近的保命分拿稳。</li></ul></div></details>
+            <details><summary>六大模块</summary><div class="detail"><ul><li>函数</li><li>三角函数</li><li>数列</li><li>立体几何</li><li>解析几何</li><li>概率统计</li></ul></div></details>
+            <details><summary>补法</summary><div class="detail"><ul><li>每个模块先看课本定义和例题。</li><li>课本例题、课后题全部吃透。</li><li>再配一本专项教辅，把基础题型练到不出错。</li><li>自学不行就找适合自己的网课老师，听懂后立刻刷题。</li></ul></div></details>
+            <details><summary>错题本三问</summary><div class="detail"><ul><li>我错在哪里？</li><li>正确入口是什么？</li><li>下次看到什么条件，要想到这个方法？</li></ul></div></details>
+            <span class="tagline">关键词：模块化 · 基础题 · 错题三问</span>
+          </article>
+
+          <article class="branch">
+            <div class="branch-title"><span class="num">04</span><h3>语文：古诗文和作文</h3></div>
+            <p class="summary">语文暑假不用每天大量刷卷，但必须解决两个长期任务：背诵和作文素材。</p>
+            <details open><summary>古诗文</summary><div class="detail"><ul><li>最浪费时间，也最适合在暑假提前完成。</li><li>每天背一点，第二天先默写。</li><li>容易写错的字单独整理。</li></ul></div></details>
+            <details><summary>作文</summary><div class="detail"><ul><li>一周 2–3 次练审题。</li><li>不一定每次写全文，但要写出中心论点、三个分论点和对应素材。</li><li>用暑假的大段时间刷素材、建素材库。</li></ul></div></details>
+            <details><summary>语文想稳靠什么</summary><div class="detail"><ul><li>不靠临场发挥。</li><li>靠平时有素材、有结构。</li><li>客观题技巧可以后续集中学，但背诵和作文不能拖。</li></ul></div></details>
+            <span class="tagline">关键词：默写 · 审题 · 素材库</span>
+          </article>
+
+          <article class="branch">
+            <div class="branch-title"><span class="num">05</span><h3>理科选科：基础模型 + 回归课本</h3></div>
+            <p class="summary">理科不好的同学，暑假不要直接冲压轴题，先把常规板块练熟。</p>
+            <details open><summary>物理</summary><div class="detail"><ul><li>暑假是攻坚基础模型的最后一段大块时间。</li><li>重点：力学、受力分析、能量综合。</li><li>不要死抠压轴题，先刷高考中档题。</li><li>实在不会的难点可以战略放弃，先拿常规板块。</li></ul></div></details>
+            <details><summary>化学与生物</summary><div class="detail"><ul><li>先接受，再理解；入门阶段不要过度纠结“为什么”。</li><li>利用碎片时间回归课本。</li><li>抠冷门实验步骤、生物概念细节。</li><li>搭配真题分类卷查漏补缺。</li></ul></div></details>
+            <details><summary>学有余力</summary><div class="detail"><ul><li>建立知识体系：找关联、理逻辑。</li><li>例如化学方程式背后很多是氧化还原规律。</li><li>但前提是基础已经打牢。</li></ul></div></details>
+            <span class="tagline">关键词：中档题 · 课本细节 · 体系化</span>
+          </article>
+
+          <article class="branch">
+            <div class="branch-title"><span class="num">06</span><h3>文科选科：背诵只是起点</h3></div>
+            <p class="summary">文科想从 80+ 到 90+，不能只会背书，要会框架、地图、时间轴和热点迁移。</p>
+            <details open><summary>分层策略</summary><div class="detail"><ul><li>70 分以下：先背重点，先把课本基础补起来。</li><li>70 分以上：开始训练结构化输出和知识迁移。</li></ul></div></details>
+            <details><summary>历史</summary><div class="detail"><ul><li>画贯通中外的超级时间轴。</li><li>上面写时间，下面写政治、经济、文化大事件。</li><li>理解前因后果，用输出代替输入，把历史背景讲给自己听。</li></ul></div></details>
+            <details><summary>地理</summary><div class="detail"><ul><li>大题模板化：位置、水文、人文特征、答题术语。</li><li>吃透地图：主要经纬线、区域、气候、地形。</li><li>积累怪题和特殊案例，训练理解而不是死背。</li></ul></div></details>
+            <details><summary>政治</summary><div class="detail"><ul><li>四本必修按单元、框题整理核心原理和方法论。</li><li>用思维导图搭框架。</li><li>想上 90，要结合热点思考：这个材料对应课本哪个板块、哪个知识点。</li></ul></div></details>
+            <span class="tagline">关键词：时间轴 · 地图 · 热点迁移</span>
+          </article>
+
+          <article class="branch">
+            <div class="branch-title"><span class="num">07</span><h3>执行前提：时间和手机</h3></div>
+            <p class="summary">计划不崩盘，靠两个前提：守住早上黄金时间，管住手机。</p>
+            <details open><summary>时间分配</summary><div class="detail"><ul><li>早上不要睡到九十点，最亏的是丢掉记忆黄金期。</li><li>早上适合背单词、古诗文、选科知识点。</li><li>每天有效学习 6–8 小时即可，别熬夜自我感动。</li></ul></div></details>
+            <details><summary>手机管理</summary><div class="detail"><ul><li>不要和人性对抗，直接物理隔离。</li><li>学习时把手机放到另一个房间，或放进锁盒。</li><li>不要放在伸手就能碰到的位置。</li></ul></div></details>
+            <details><summary>避坑</summary><div class="detail"><ul><li>别跟风报一堆补习班和网课，赶课没时间消化等于白学。</li><li>别囤一桌子教辅，一科一本吃透胜过十本翻两页。</li></ul></div></details>
+            <span class="tagline">关键词：黄金时间 · 物理隔离 · 消化</span>
+          </article>
+
+          <article class="branch">
+            <div class="branch-title"><span class="num">08</span><h3>结尾行动：一张 A4 纸</h3></div>
+            <p class="summary">高三不是靠热血冲过去的，而是靠一套清醒计划走过去的。</p>
+            <details open><summary>最后三句话</summary><div class="detail"><ul><li>先抓主科，再抓短板。</li><li>先抓基础，再抓题型。</li><li>先抓能提分的事，再谈努力感。</li></ul></div></details>
+            <details><summary>明天 Todo-list</summary><div class="detail"><ul><li>一件主科任务。</li><li>一件弱科任务。</li><li>一件复习或整理任务。</li></ul></div></details>
+            <details><summary>情绪收束</summary><div class="detail"><ul><li>你不用做最卷的人，但要做最清楚自己问题的人。</li><li>开学后别人刚开始慌，你已经知道补什么、练什么、放弃什么。</li><li>找对方向，每天踏实有效努力，才是真领先。</li></ul></div></details>
+            <span class="tagline">关键词：清醒计划 · 立刻执行</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="action-board">
+      <article class="action"><b>STEP 01</b><h4>列出短板</h4><p>不要先排完美时间表，先写清楚：英语、数学、语文、选科分别最弱在哪里。</p></article>
+      <article class="action"><b>STEP 02</b><h4>锁定主线</h4><p>主科打底，弱科优先；每科只抓一条最核心的暑假任务，不同时开太多战线。</p></article>
+      <article class="action"><b>STEP 03</b><h4>明天开始</h4><p>拿一张 A4 纸，写下明天三件事：主科任务、弱科任务、复习整理任务。</p></article>
+    </section>
+
+    <section class="footer">
+      <h3>一句话总结</h3>
+      <p>这个暑假最重要的不是把自己排得多满，而是清楚知道：哪些事情最能提分，哪些任务必须提前做，哪些无效努力应该果断放弃。</p>
+    </section>
+  </main>
+
+  <script>
+    let scale = 1;
+    const map = document.getElementById('mindmap');
+    function zoomMap(delta){
+      scale = Math.max(.72, Math.min(1.24, scale + delta));
+      map.style.transform = `scale(${scale})`;
+      map.style.marginBottom = `${(scale-1)*760}px`;
+    }
+    function setAll(open){
+      document.querySelectorAll('details').forEach(d => d.open = open);
+    }
+  </script>
+</body>
+</html>
